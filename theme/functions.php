@@ -214,6 +214,7 @@ add_filter('should_load_separate_core_block_assets', '__return_true');
 require_once __DIR__ . '/inc/filters.php';
 require_once __DIR__ . '/inc/hooks.php';
 require_once __DIR__ . '/inc/template_functions.php';
+require_once __DIR__ . '/inc/mp-tgm-plugins/required-plugins.php';
 
 require_once __DIR__ . '/inc/cpt/all.php';
 require_once __DIR__ . '/inc/tax/all.php';
