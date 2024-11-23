@@ -1,0 +1,45 @@
+node_modules/
+.idea/
+wp/
+
+# ignore everything in the root except the "wp-content" directory.
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+
+# ignore specific themes
+wp-content/themes/twenty*/
+
+# uploads
+uploads/*
+!uploads/.gitkeep
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# compiled files
+theme/main.js
+theme/main.css
+theme/critical.js
+theme/critical.css
+theme/dist
+theme/assets/images/build/*
+!theme/assets/images/build/.gitkeep
+
+.idea/*
+.npmrc.dev
+.DS_Store
+webpack.local.config.js

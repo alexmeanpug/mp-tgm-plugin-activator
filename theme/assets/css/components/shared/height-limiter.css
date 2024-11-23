@@ -1,0 +1,28 @@
+.height-limiter {
+  @apply relative;
+
+  .height-limiter__main {
+    --mask: linear-gradient(to bottom,
+            rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 40%,
+            rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+    ) 100% 50% / 100% 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    @apply overflow-hidden max-h-[300px];
+  }
+
+  .height-limiter__toggle {
+    @apply block w-8 mx-auto mt-8 transition-transform duration-300;
+  }
+
+  &.unfurled {
+    .height-limiter__main {
+      mask: none;
+      @apply max-h-none;
+    }
+
+    .height-limiter__toggle {
+      @apply rotate-180;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "./css/components/forms.css";
+@import "./css/components/shared/animations.css";
+@import "./css/components/shared/links.css";
+@import "./css/components/shared/modals.css";
+@import "./css/components/shared/tooltips.css";
+@import "./css/components/shared/height-limiter.css";
+@import "./css/plugins/toc.css";
+
+@import "./css/widgets/shared/location-navigator.css";
+
+/* Uncomment for optional styles
+@import "./css/components/shared/tabs.css";
+@import "./css/components/optional/accordion.css";
+@import "./css/components/optional/affix.css";
+@import "./css/components/optional/dynamic-image.css";
+@import "./css/components/optional/tabs.css";
+ */

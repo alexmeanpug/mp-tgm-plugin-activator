@@ -1,0 +1,33 @@
+@layer components {
+  .inf-tabs {
+    &__tab {
+      @apply relative transition-colors duration-500;
+
+      &:after {
+        content: '';
+        @apply w-full border-t-2 absolute bottom-0 left-0 scale-0 -mb-4 transition-transform duration-500;
+      }
+
+      &.active {
+        @apply font-bold;
+
+        &:after {
+          @apply scale-100;
+        }
+      }
+    }
+
+    &__contents-wrapper {
+      /** Required: Setting a Manual Height **/
+      @apply overflow-hidden relative h-96;
+    }
+
+    &__body {
+      @apply absolute left-full top-0 w-full h-full transition-all duration-300;
+
+      &.active {
+        @apply left-0;
+      }
+    }
+  }
+}

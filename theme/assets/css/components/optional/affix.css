@@ -1,0 +1,9 @@
+.ps-affix {
+  &.affixed {
+    @apply fixed;
+
+    &--end {
+      @apply absolute;
+    }
+  }
+}

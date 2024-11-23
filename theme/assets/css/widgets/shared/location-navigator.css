@@ -1,0 +1,97 @@
+.mp-location-navigator-widget {
+  @apply relative px-8 py-6 my-4 text-base;
+
+  &__info-icon {
+    @apply absolute top-0 left-1/2 -ml-4 w-8 h-8 -mt-4;
+  }
+
+  &__top {
+    @apply border-b-2 uppercase pb-4 text-center text-2xl font-bold;
+  }
+
+  &__search {
+    @apply pt-6;
+  }
+
+  &__input {
+    @apply flex border-2;
+
+    input {
+      @apply bg-transparent px-6 py-4 flex-grow;
+    }
+
+    .mp-location-navigator-widget__cta {
+      @apply px-4 py-4 text-center hidden;
+      @apply md:block;
+
+      img {
+        @apply w-6;
+      }
+    }
+  }
+
+  &__results {
+    @apply h-64 overflow-auto my-8;
+
+    li {
+      @apply py-2 font-bold;
+
+      &.mp-location-navigator-widget__results__group {
+        @apply pb-4;
+        @apply md:pb-10;
+
+        .mp-location-navigator-widget__results__group__children li {
+          @apply font-normal;
+        }
+      }
+    }
+  }
+
+  &__results-header {
+    @apply text-2xl text-center border-b-2 pb-6 font-bold;
+
+    p {
+      @apply text-sm;
+    }
+  }
+
+  &__bottom {
+    @apply text-center pt-8;
+
+    .mp-location-navigator-widget__cta {
+      @apply px-8 py-4 uppercase tracking-wide font-bold;
+    }
+
+    img {
+      @apply w-3 mx-auto;
+    }
+  }
+
+  &__link {
+    &--highlighted {
+      @apply border-b;
+    }
+  }
+
+  &__cta {
+    @apply transition-colors duration-500 pr-4;
+  }
+}
+
+/** SAMPLE STYLING **/
+/*
+.mp-location-navigator-widget {
+  background: #021059;
+  color: white;
+  border-color: white;
+
+  &__cta {
+    background-color: white;
+    color: #021059;
+  }
+
+  ::placeholder {
+    color: white;
+  }
+}
+*/

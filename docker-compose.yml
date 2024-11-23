@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     ports:
+       - "3306:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   static:
+    build:
+      dockerfile: docker/static/Dockerfile
+      context: .
+    command: ["run", "dev"]
+    volumes:
+      - ./webpack:/code/webpack
+      - ./gulpfile.js:/code/gulpfile.js
+      - ./tailwind.config.js:/code/tailwind.config.js
+      - ./theme:/code/theme
+
+   wordpress:
+     depends_on:
+       - db
+       - static
+     image: wordpress:latest
+     volumes:
+       - wp_plugins:/var/www/html/wp-content/plugins
+       - ./theme:/var/www/html/wp-content/themes/challenge-1-theme
+       - ./uploads:/var/www/html/wp-content/uploads
+       - ./server_config.ini:/usr/local/etc/php/conf.d/server_config.ini
+       - ./wp:/var/www/html
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WP_ENVIRONMENT_TYPE: development
+volumes:
+    db_data:
+    wp_plugins:

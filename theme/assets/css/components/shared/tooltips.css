@@ -1,0 +1,30 @@
+.mp-tooltip {
+  @apply relative;
+
+  &:before {
+    content: attr(data-text);
+    width: 200px;
+    z-index: 20;
+    @apply absolute top-1/2 hidden p-4 text-center;
+  }
+
+  &:hover:before, &:hover:after {
+    @apply block;
+  }
+
+  &:after {
+    content: "";
+    margin-bottom: -10px;
+    transform: translateX(-50%);
+    @apply absolute hidden bottom-0 left-1/2;
+  }
+
+  &--bottom:before {
+    left: initial;
+    margin: initial;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+    margin-right: -10px;
+  }
+}

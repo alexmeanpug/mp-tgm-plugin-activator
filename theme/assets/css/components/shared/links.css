@@ -1,0 +1,17 @@
+.mp-link {
+  @apply relative;
+
+  &--underline {
+    &::after {
+      transition: width .3s;
+      content: '';
+      @apply absolute bottom-0 left-0 w-0 border-b-2 -mb-2;
+    }
+
+    &:hover {
+      &::after {
+        @apply w-full;
+      }
+    }
+  }
+}

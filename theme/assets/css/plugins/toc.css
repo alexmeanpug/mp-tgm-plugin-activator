@@ -1,0 +1,46 @@
+/** Sticky Widget **/
+.ez-toc-widget-sticky, .ez-toc-counter {
+  @apply py-4 mb-8;
+
+  .ez-toc-widget-sticky-list {
+    @apply text-sm border-l-2 mt-8;
+
+    li {
+      a {
+        @apply pl-8 py-2 block relative;
+
+        &:after {
+          content: '';
+          @apply absolute left-0 top-0 -ml-1 h-full w-2 opacity-0 transition-opacity duration-300;
+        }
+
+        &.active, &:hover {
+          &:after {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+  }
+
+  .ez-toc-widget-sticky-title {
+    @apply uppercase text-2xl md:text-3xl lg:text-4xl text-center;
+  }
+
+  > ul > li a {
+    @apply pl-8;
+  }
+  /* 2nd Level */
+  > ul > li > ul > li a {
+    @apply pl-12;
+  }
+  /* 3rd Level */
+  > ul > li > ul > li > ul > li a {
+    @apply pl-16;
+  }
+}
+
+/** Block **/
+.ez-toc-counter {
+
+}

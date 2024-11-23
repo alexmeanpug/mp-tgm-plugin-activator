@@ -1,0 +1,25 @@
+@layer components {
+  .inf-accordion {
+    &__trigger {
+      @apply cursor-pointer;
+    }
+
+    &__icon {
+      @apply transition-transform duration-300;
+    }
+
+    &__body {
+      @apply transition-all overflow-hidden duration-300 h-0;
+    }
+
+    &.open {
+      .inf-accordion__icon {
+        @apply rotate-180;
+      }
+
+      .inf-accordion__body {
+        @apply h-auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.mp-tabs {
+  .mp-tabs__buttons {
+    @apply border-b flex items-center;
+  }
+
+  .mp-tabs__contents {
+    @apply relative;
+
+    .mp-tab__content {
+      @apply absolute top-0 left-0 w-full transition-transform duration-200;
+      transform: translateX(110%);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "acf/example",
+    "title": "Example Block",
+    "description": "A customizable block for displaying example content with flexible options",
+    "category": "child-theme-blocks",
+    "icon": "admin-home",
+    "keywords": ["example", "block"],
+    "acf": {
+      "mode": "preview",
+      "renderTemplate": "example-block.php"
+    },
+    "example": {
+      "attributes": {
+        "data": {
+          "is_preview": true
+        }
+      }
+    },
+    "supports": {
+      "anchor": true
+    }
+  }
